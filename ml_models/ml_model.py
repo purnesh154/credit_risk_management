@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from models.user import UserModel
 
 def preprocess(data):
     data["person_home_ownership"] = data["person_home_ownership"].map({'OWN':0, 'MORTGAGE':1, 'RENT':2, 'OTHER':3})
@@ -15,7 +16,7 @@ def normalize(data):
     return data
 
 def predict_defaulter(config,model):
-    if type(config) == dict:
+    if type(config) == UserModel:
         data = pd.DataFrame(config)
     else:
         data = config

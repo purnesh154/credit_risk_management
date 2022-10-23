@@ -6,10 +6,11 @@ from models.user import UserModel
 
 import pickle
 
-from models.ml_model import predict_defaulter
+from ml_models.ml_model import predict_defaulter
+
+from models.prediction import Prediction
 
 app = FastAPI()
-
 
 @app.get("/")
 def read_root():
@@ -22,7 +23,4 @@ def predict(user: UserModel):
         model = pickle.load(f_in)
         f_in.close()
     predictions = predict_defaulter(user, model)
-    result = {
-        'defaulter_prediction': list(predictions)
-    }
-    return result
+    return Prediction(defaulter_prediction=[list(predictions)])
