@@ -28,7 +28,7 @@ def predict_defaulter(user,model):
     'loan_percent_income':user.loan_percent_income,
     'cb_person_default_on_file':user.cb_person_default_on_file,
     'cb_person_cred_hist_length':user.cb_person_cred_hist_length
-}
+    }
     if type(config) == dict:
         data = pd.DataFrame(config)
     else:

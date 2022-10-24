@@ -33,7 +33,8 @@ from pydantic import BaseModel
   "cb_person_cred_hist_length": [
     4
   ]
-}"""
+}
+python -m uvicorn app:app --reload"""
 class UserModel(BaseModel):
     person_age: list[int]
     person_income: list[int]
