@@ -15,8 +15,21 @@ def normalize(data):
     data = sc.fit_transform(data)
     return data
 
-def predict_defaulter(config,model):
-    if type(config) == UserModel:
+def predict_defaulter(user,model):
+    config = {
+    'person_age': user.person_age,
+    'person_income':user.person_income,
+    'person_home_ownership':user.person_home_ownership,
+    'person_emp_length':user.person_emp_length,
+    'loan_intent':user.loan_intent,
+    'loan_grade':user.loan_grade,
+    'loan_amnt':user.loan_amnt,
+    'loan_int_rate':user.loan_int_rate,
+    'loan_percent_income':user.loan_percent_income,
+    'cb_person_default_on_file':user.cb_person_default_on_file,
+    'cb_person_cred_hist_length':user.cb_person_cred_hist_length
+}
+    if type(config) == dict:
         data = pd.DataFrame(config)
     else:
         data = config
