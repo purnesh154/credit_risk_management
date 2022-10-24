@@ -36,9 +36,4 @@ def predict_defaulter(user,model):
     data = preprocess(data)
     data = normalize(data)
     y_pred = model.predict(data)
-    for i in range (0,y_pred.size):
-        if y_pred[i]>0.5:
-            y_pred[i]=1
-        else:
-            y_pred[i]=0
-    return y_pred.astype(int)
+    return y_pred

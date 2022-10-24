@@ -19,4 +19,4 @@ def predict(user: UserModel):
         model = pickle.load(f_in)
         f_in.close()
     predictions = predict_defaulter(user, model)
-    return Prediction(defaulter_prediction=[predictions])
+    return Prediction(defaulter_prediction=[predictions]) 
