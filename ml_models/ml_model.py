@@ -4,9 +4,9 @@ from sklearn.preprocessing import StandardScaler
 from models.user import UserModel
 
 def preprocess(data):
-    data["person_home_ownership"] = data["person_home_ownership"].map({'OWN':0, 'MORTGAGE':1, 'RENT':2, 'OTHER':3})
-    data["loan_intent"] = data["loan_intent"].map({'EDUCATION':0, 'MEDICAL':1, 'VENTURE':2, 'PERSONAL':3, 'HOMEIMPROVEMENT':4, 'DEBTCONSOLIDATION':5})
-    data["loan_grade"] = data["loan_grade"].map({'B':0, 'C':1, 'A':2, 'D':3, 'E':4, 'F':5, 'G':6})
+    data["person_home_ownership"] = data["person_home_ownership"].map({'OWN':2, 'MORTGAGE':0, 'RENT':3, 'OTHER':1})
+    data["loan_intent"] = data["loan_intent"].map({'EDUCATION':1, 'MEDICAL':3, 'VENTURE':5, 'PERSONAL':4, 'HOMEIMPROVEMENT':2, 'DEBTCONSOLIDATION':0})
+    data["loan_grade"] = data["loan_grade"].map({'B':1, 'C':2, 'A':0, 'D':3, 'E':4, 'F':5, 'G':6})
     data["cb_person_default_on_file"] = data["cb_person_default_on_file"].map({'N':0, 'Y':1})
     return data
 
