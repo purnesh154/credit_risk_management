@@ -7,6 +7,94 @@
     <title>HOME</title>
     
     <link rel="stylesheet" href="signin.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    
+}
+.container{
+    text-align: center;
+background-color: #faf6f6;
+width: 50%;
+height: 680px;
+margin: 90px 658px;
+}
+.headline{
+    text-align: center;
+    color: red;
+    margin: 12px;
+    padding: 72px;
+  
+}
+input,textarea{
+
+    margin: 6px auto;
+    padding: 6px;
+    border: 2px solid double;
+    font-size: 12px;
+    border-radius: 7px;
+    display: block;
+    width: 256px;
+    height: 19px;
+  
+
+}
+.btn{
+    background-color: #0b0fe6;
+    color: white;
+    margin: 5px;
+    padding: 6px;
+    border: 2px solid white;
+    border-radius: 64px;
+    font-size: 16px;
+    width: 166px;
+    height: 45px;
+    cursor: pointer;
+  
+}
+.bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+img{
+
+    width: 147px;
+    margin: 228px
+}
+.bottom h1{
+    position: absolute;
+    bottom: 161px;
+    left: 173px;
+  
+}
+.container a{
+    display: block;
+   color: red;
+}
+
+.login{
+    background-color: #00B74A;
+}
+.second_box{
+    display: none;
+}
+
+.headline .message{
+    color: #00B74A;
+}
+
+.headline .success{
+    color: red;
+}
+.headline .message1{
+    color: red;
+}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,28 +113,29 @@
 
     
     </div class=signup>
+    <div class="form-group first_box"></div>
     <form  method="post">
-        <div class="form-group first_box">
+        
     <input type="number" name="person_age" id="person_age" placeholder="Age" required>
     <input type="number" name="person_income" id="person_income" placeholder="Annual Income" required>
     <input type="text" name="person_home_ownership" id="person_home_ownership" placeholder="Home Ownership" required>
     <input type="number" name="person_emp_length" id="person_emp_length" placeholder="Employment length" required>
     <input type="text" name="loan_intent" id="loan_intent" placeholder="Loan intent" required>
     <input type="text" name="loan_grade" id="loan_grade"  placeholder="Loan grade" required>
-    <input type="number" name="loan_amnt"  id="loan_amnt" placeholder="Loan Amount" required>
-    <input type="number" name="loan_int_rate"  id="loan_int_rate" placeholder="Interest Rate" required>
-    <input type="number" name="loan_percent_income"  id="loan_percent_income" placeholder="Percent income" required>
+    <input type="number" step="any" name="loan_amnt"  id="loan_amnt" placeholder="Loan Amount" required>
+    <input type="number" step="any" name="loan_int_rate"  id="loan_int_rate" placeholder="Interest Rate" required>
+    <input type="number" step="any" name="loan_percent_income"  id="loan_percent_income" placeholder="Percent income" required>
     <input type="text" name="cb_person_default_on_file"  id="cb_person_default_on_file" placeholder="Historical default" required>
     <input type="number" name="cb_person_cred_hist_length"  id="cb_person_cred_hist_length" placeholder="Credit history length" required>
  
     
-
-    <button type="submit" name="submit" class="btn">Submit</button>
+    <input type="submit">
+    <!-- <button type="submit" name="submit" class="btn">Submit</button> -->
+    
+    </form>
 
     <p>Result: {{ result }}</p>
-    </div>
-
-    </form>
+</div>
     
    
    
